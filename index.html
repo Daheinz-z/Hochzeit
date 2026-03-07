@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Regina & David – Hochzeit</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Inter,sans-serif;
+background:#faf8f5;
+color:#333;
+}
+
+section{
+padding:60px 20px;
+max-width:750px;
+margin:auto;
+}
+
+h1,h2{
+font-family:'Playfair Display',serif;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+background:
+linear-gradient(rgba(255,255,255,.7),rgba(255,255,255,.9)),
+url("https://images.unsplash.com/photo-1506744038136-46273834b3fb");
+
+background-size:cover;
+}
+
+.hero h1{
+font-size:48px;
+margin:0;
+}
+
+.hero p{
+font-size:20px;
+margin:8px 0;
+}
+
+.card{
+background:white;
+padding:28px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+.map iframe{
+width:100%;
+height:260px;
+border:none;
+border-radius:10px;
+}
+
+.leaves{
+text-align:center;
+margin:30px 0;
+}
+
+.leaves img{
+width:120px;
+opacity:.7;
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin-bottom:14px;
+border-radius:6px;
+border:1px solid #ddd;
+}
+
+button{
+background:#6f8f6f;
+border:none;
+color:white;
+padding:14px;
+width:100%;
+border-radius:8px;
+font-size:16px;
+}
+
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:all .8s;
+}
+
+.fade.visible{
+opacity:1;
+transform:none;
+}
+
+footer{
+text-align:center;
+padding:40px;
+font-size:14px;
+color:#888;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<h1>Regina & David</h1>
+<p>04. Juli 2026</p>
+<p>Werbellinsee</p>
+
+</section>
+
+
+<div class="leaves">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Watercolor_leaves.png/320px-Watercolor_leaves.png">
+</div>
+
+
+<section class="fade">
+
+<h2>Locations</h2>
+
+<div class="card">
+
+<p><b>Café Wildau (Feier)</b></p>
+
+<div class="map">
+
+<iframe src="https://maps.google.com/maps?q=Cafe%20Wildau%20Schorfheide&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
+</div>
+
+<br>
+
+<p><b>Standesamt Joachimsthal</b></p>
+
+<div class="map">
+
+<iframe src="https://maps.google.com/maps?q=Standesamt%20Joachimsthal&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
+</div>
+
+<br>
+
+<p><b>Bahnhof Eberswalde</b></p>
+
+<div class="map">
+
+<iframe src="https://maps.google.com/maps?q=Eberswalde%20Bahnhof&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
+</div>
+
+</div>
+
+</section>
+
+
+<div class="leaves">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Watercolor_leaves.png/320px-Watercolor_leaves.png">
+</div>
+
+
+<section class="fade">
+
+<h2>Programm</h2>
+
+<div class="card">
+
+<p><b>Freitag · 03. Juli</b></p>
+
+<p>Entspannter Abend im Café Wildau – wir sind ab ca. 15:00 da.</p>
+
+<hr>
+
+<p><b>Samstag · 04. Juli</b></p>
+
+<p>14:00 Trauung Standesamt Joachimsthal</p>
+<p>15:30 Sektempfang</p>
+<p>16:00 Kaffee & Kuchen</p>
+<p>19:30 Abendessen</p>
+<p>21:30 Party</p>
+
+</div>
+
+</section>
+
+
+<div class="leaves">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Watercolor_leaves.png/320px-Watercolor_leaves.png">
+</div>
+
+
+<section class="fade">
+
+<h2>RSVP</h2>
+
+<div class="card">
+
+<form id="rsvpForm">
+
+<label>Name</label>
+<input name="name" required>
+
+<label>Anzahl Erwachsene</label>
+<input type="number" name="adults">
+
+<label>Kinder 14–18</label>
+<input type="number" name="kids1">
+
+<label>Kinder 6–13</label>
+<input type="number" name="kids2">
+
+<label>Kinder unter 6</label>
+<input type="number" name="kids3">
+
+<label>Essenswunsch</label>
+
+<select name="food">
+<option>Alles</option>
+<option>Vegetarisch</option>
+<option>Vegan</option>
+</select>
+
+<button type="submit">Antwort senden</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<div class="leaves">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Watercolor_leaves.png/320px-Watercolor_leaves.png">
+</div>
+
+
+<section class="fade">
+
+<h2>Songwünsche für die Party 🎵</h2>
+
+<div class="card">
+
+<form id="songForm">
+
+<label>Song</label>
+<input name="song">
+
+<label>Künstler</label>
+<input name="artist">
+
+<button type="submit">Song hinzufügen</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<footer>
+
+Wir freuen uns sehr darauf, diesen Tag mit euch zu feiern ❤️
+
+</footer>
+
+
+<script>
+
+const faders=document.querySelectorAll(".fade")
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible")
+}
+})
+})
+
+faders.forEach(el=>observer.observe(el))
+
+
+document.getElementById("rsvpForm").addEventListener("submit",function(e){
+
+e.preventDefault()
+
+fetch("RSVP_SCRIPT_URL",{
+method:"POST",
+body:new FormData(this)
+})
+
+.then(()=>alert("Danke für eure Rückmeldung!"))
+
+})
+
+
+document.getElementById("songForm").addEventListener("submit",function(e){
+
+e.preventDefault()
+
+fetch("SONG_SCRIPT_URL",{
+method:"POST",
+body:new FormData(this)
+})
+
+.then(()=>alert("Song gespeichert 🎶"))
+
+})
+
+</script>
+
+</body>
+</html>
