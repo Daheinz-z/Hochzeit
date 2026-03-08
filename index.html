@@ -19,15 +19,12 @@ font-family:'Inter',sans-serif;
 background:#f5f3ee;
 color:#333;
 line-height:1.7;
-overflow-x:hidden;
 }
 
 section{
 padding:90px 20px;
-width:100%;
 max-width:1100px;
 margin:auto;
-position:relative;
 }
 
 h1,h2{
@@ -43,12 +40,13 @@ margin-bottom:50px;
 /* ---------- HERO ---------- */
 
 .hero{
-
 min-height:100vh;
 display:flex;
-align-items:center;
+align-items:flex-start;
 justify-content:center;
 text-align:center;
+
+padding-top:120px;
 
 background:
 linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.9)),
@@ -56,50 +54,54 @@ url("cafe-wildau.jpg");
 
 background-size:cover;
 background-position:center;
-
 }
 
 .hero h1{
-
-font-size:52px;
+font-size:54px;
 margin-bottom:10px;
-
 }
 
-.hero p{
-
-font-size:20px;
-
-}
-
-/* ---------- LEAF SEPARATOR ---------- */
-
-.separator{
-
-text-align:center;
-margin-top:-30px;
-margin-bottom:-30px;
-
-}
-
-.separator img{
-
-width:160px;
-opacity:.6;
-
-}
-
-/* ---------- ELEGANT CARD ---------- */
+/* ---------- CARD ---------- */
 
 .card{
 
 background:linear-gradient(180deg,#ffffff,#fbfaf7);
+
 padding:40px;
+
 border-radius:18px;
 
 box-shadow:
 0 15px 50px rgba(0,0,0,0.06),
 0 2px 4px rgba(0,0,0,0.05);
+
+}
+
+/* ---------- TAGESABLAUF ---------- */
+
+.timeline{
+
+margin-top:20px;
+
+}
+
+.timeline ul{
+
+padding-left:28px;
+
+}
+
+.timeline li{
+
+margin-bottom:14px;
+padding-left:6px;
+
+}
+
+.timeline li::marker{
+
+font-size:18px;
+color:#5f7f63;
 
 }
 
@@ -126,9 +128,15 @@ flex-direction:column;
 
 width:200px;
 height:200px;
+
+border:2px solid black;
+
 clip-path:polygon(25% 5%,75% 5%,100% 50%,75% 95%,25% 95%,0% 50%);
+
 overflow:hidden;
 flex-shrink:0;
+
+cursor:pointer;
 
 }
 
@@ -137,31 +145,59 @@ flex-shrink:0;
 width:100%;
 height:100%;
 border:0;
+pointer-events:none;
+
+}
+
+.location-text{
+
+line-height:1.7;
+
+}
+
+.location-text strong{
+
+font-size:18px;
 
 }
 
 /* ---------- FORM ---------- */
 
-form input,select{
+form input,
+form select{
 
 width:100%;
+box-sizing:border-box;
+
 padding:12px;
+
 margin-bottom:14px;
+
 border-radius:8px;
+
 border:1px solid #ddd;
+
 font-size:15px;
 
 }
+
+/* ---------- BUTTON ---------- */
 
 button{
 
 background:#5f7f63;
 border:none;
+
 padding:14px;
+
 width:100%;
+
 color:white;
+
 border-radius:8px;
+
 font-size:16px;
+
 cursor:pointer;
 
 }
@@ -234,7 +270,7 @@ transform:translateY(0);
 
 <strong>Ihr Lieben</strong>,<br><br>
 
-am 04. Juli 2026 laden wir euch ganz herzlich ein,  
+am 04. Juli 2026 laden wir euch ganz herzlich ein,<br>
 mit uns gemeinsam unsere Hochzeit zu feiern!
 
 </p>
@@ -243,51 +279,49 @@ mit uns gemeinsam unsere Hochzeit zu feiern!
 
 </section>
 
-<div class="separator">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
-</div>
-
 <!-- TAGESABLAUF -->
 
 <section class="reveal">
 
 <h2>Tagesablauf</h2>
 
-<div class="card">
+<div class="card timeline">
 
-<p>
+<strong>Freitag, 03.07:</strong>
 
-<strong>Freitag, 03.07:</strong><br>
+<ul>
 
-• Wenn ihr Lust habt, könnt ihr gerne schon am Vortag anreisen und mit uns einen entspannten Nachmittag/Abend im Café Wildau am Werbellinsee verbringen.<br>
+<li>Wenn ihr Lust habt, könnt ihr gerne schon am Vortag anreisen und mit uns einen entspannten Nachmittag/Abend im Café Wildau am Werbellinsee verbringen.</li>
 
-• Wir laden alle anwesenden Gäste auf ein paar Snacks und Drinks ein.<br>
+<li>Wir laden alle anwesenden Gäste auf Snacks und ein paar Drinks ein.</li>
 
-• Wir persönlich werden ab ca. 14:00 Uhr vor Ort sein - es gibt aber keine feste Startzeit.<br><br>
+<li>Wir persönlich werden ab ca. 14:00 Uhr vor Ort sein - es gibt aber keine feste Startzeit.</li>
 
-<strong>Samstag, 04.07:</strong><br>
+</ul>
 
-• 14:00 Uhr: Trauung im Standesamt Joachimsthal (Schorfheide)<br>
+<br>
 
-    Im Standesamt selbst gibt es nur 40 Sitzplätze. Ihr seid trotzdem alle herzlich eingeladen, euch mit reinzuquetschen oder mit uns draußen in Empfang zu nehmen.<br>
+<strong>Samstag, 04.07:</strong>
 
-• 15:30 Uhr: Sektempfang im Café Wildau<br>
+<ul>
 
-• 16:00/16:30 Café & Kuchen<br>
+<li>14:00 Uhr: Trauung im Standesamt Joachimsthal (Schorfheide)</li>
 
-• 19:30 Uhr Abendessen<br>
+<li>Im Standesamt selbst gibt es nur 40 Sitzplätze. Ihr seid trotzdem alle herzlich eingeladen, euch mit reinzuquetschen oder mit uns draußen in Empfang zu nehmen.</li>
 
-• 21:30/22:00 Uhr Party
+<li>15:30 Uhr: Sektempfang am Café Wildau</li>
 
-</p>
+<li>16:00/16:30 Café & Kuchen</li>
+
+<li>19:30 Uhr Abendessen</li>
+
+<li>21:30/22:00 Uhr Party</li>
+
+</ul>
 
 </div>
 
 </section>
-
-<div class="separator">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
-</div>
 
 <!-- LOCATIONS -->
 
@@ -299,25 +333,33 @@ mit uns gemeinsam unsere Hochzeit zu feiern!
 
 <div class="location">
 
+<a href="https://maps.google.com/?q=Standesamt+Joachimsthal" target="_blank">
+
 <div class="hex">
 
 <iframe src="https://maps.google.com/maps?q=Standesamt%20Joachimsthal&t=&z=13&output=embed"></iframe>
 
 </div>
 
-<p>
+</a>
 
-<strong>Standesamtliche Trauung</strong><br>
+<div class="location-text">
 
-Standesamt Joachimsthal (Kaiserbahnhof) - 16247 Joachimsthal<br>
+<strong>Standesamtliche Trauung</strong><br><br>
+
+Standesamt Joachimsthal (Kaiserbahnhof)<br>
+
+<i>Adresse: 16247 Joachimsthal</i><br><br>
 
 Anfahrt: Vom Café Wildau aus gelangt man mit dem Auto in ca. 15 Minuten zum Trausaal im Kaiserbahnhof in Joachimsthal.
 
-</p>
+</div>
 
 </div>
 
 <div class="location">
+
+<a href="https://maps.google.com/?q=Cafe+Wildau+Schorfheide" target="_blank">
 
 <div class="hex">
 
@@ -325,29 +367,29 @@ Anfahrt: Vom Café Wildau aus gelangt man mit dem Auto in ca. 15 Minuten zum Tra
 
 </div>
 
-<p>
+</a>
 
-<strong>Hochzeitsfeier</strong><br>
+<div class="location-text">
 
-Café Wildau, Wildau 19, 16244 Schorfheide<br>
+<strong>Hochzeitsfeier</strong><br><br>
 
-Anreise mit dem Auto: Ca. 50 Minuten von Berlin Zentrum. Parkmöglichkeiten gibt es direkt am Hotel<br>
+Café Wildau<br>
+
+<i>Adresse: Wildau 19, 16244 Schorfheide</i><br><br>
+
+Anreise mit dem Auto: Ca. 50 Minuten von Berlin Zentrum. Parkmöglichkeiten gibt es direkt am Hotel.<br><br>
 
 Anreise mit dem Zug: von Berlin HBF mit dem RE3 bis Eberswalde (ca. 40 Minuten). Von dort entweder mit dem Bus weiter Eichhorst (ganz schönes Gegurke), oder ein Teil der Hochzeitsgesellschaft spielt Shuttleservice.<br><br>
 
 Für den Abend der Party haben wir ein Shuttle organisiert, das Gäste bei Bedarf nach Eberswalde (zum Bahnhof oder Hotel) fahren kann.
 
-</p>
+</div>
 
 </div>
 
 </div>
 
 </section>
-
-<div class="separator">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
-</div>
 
 <!-- UNTERKUNFT -->
 
@@ -357,29 +399,27 @@ Für den Abend der Party haben wir ein Shuttle organisiert, das Gäste bei Bedar
 
 <div class="card">
 
-<p>
-
-<strong>Unterkunft</strong><br>
-
-Die meisten von euch haben sich bereits im Café Wildau (Hotel, Pension oder Ferienhäuser) eingemietet.<br>
+Die meisten von euch haben sich bereits im Café Wildau (Hotel, Pension oder Ferienhäuser) eingemietet.<br><br>
 
 Sollte jemand noch keine Plätze haben, gibt es aber in der Region (Werbellinsee und Eberswalde) noch weitere Ferienwohnungen und Apartments.
-
-<br><br>
-
-<strong>Essen und Getränke</strong><br>
-
-Das Café Wildau wird uns am 04. Juli mit (hoffentlich) ausreichend Essen und Getränken versorgen. Um die Planung für das Buffet zu erleichtern, wäre es super, wenn ihr im untenstehenden Formular für alle Gäste entsprechende Angaben bei den kulinarischen Vorlieben setzen könntet.
-
-</p>
 
 </div>
 
 </section>
 
-<div class="separator">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
+<section class="reveal">
+
+<h2>Essen und Getränke</h2>
+
+<div class="card">
+
+Das Café Wildau wird uns am 04. Juli mit (hoffentlich) ausreichend Essen und Getränken versorgen.<br><br>
+
+Um die Planung für das Buffet zu erleichtern, wäre es super, wenn ihr im untenstehenden Formular für alle Gäste entsprechende Angaben bei den kulinarischen Vorlieben setzen könntet.
+
 </div>
+
+</section>
 
 <!-- RSVP -->
 
@@ -389,14 +429,13 @@ Das Café Wildau wird uns am 04. Juli mit (hoffentlich) ausreichend Essen und Ge
 
 <div class="card">
 
-<p><strong>Bitte gebt uns bis zum 15.04 eine Rückmeldung über folgendes Formular.</strong></p>
+<p><strong>Bitte gebt uns bis zum 15.04 eine Rückmeldungin folgendem Formular.</strong></p>
 
 <form>
 
 <input type="text" placeholder="Vor- und Nachname">
 
 <select>
-<option>Tag der Anreise</option>
 <option>03.07.2026</option>
 <option>04.07.2026</option>
 </select>
@@ -417,10 +456,6 @@ Das Café Wildau wird uns am 04. Juli mit (hoffentlich) ausreichend Essen und Ge
 
 </section>
 
-<div class="separator">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
-</div>
-
 <!-- SPOTIFY -->
 
 <section class="reveal">
@@ -431,7 +466,7 @@ Das Café Wildau wird uns am 04. Juli mit (hoffentlich) ausreichend Essen und Ge
 
 <div class="spotify">
 
-<a href="https://open.spotify.com/playlist/6U6mrEpkEK5n6ZRZJRHPjs?si=3a7asa5TQVip1Yp5mLmPkQ&pi=NUPDuqEUSRiFh&nd=1&dlsi=9174fa86d41149c1" target="_blank">
+<a href="https://open.spotify.com/playlist/6U6mrEpkEK5n6ZRZJRHPjs?si=3a7asa5TQVip1Yp5mLmPkQ&pi=NUPDuqEUSRiFh&nd=1&dlsi=e4c1243f02424ec4" target="_blank">
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg">
 
@@ -460,17 +495,11 @@ Wir freuen uns sehr darauf, diesen Tag mit euch zu feiern ❤️
 const reveals=document.querySelectorAll(".reveal");
 
 const observer=new IntersectionObserver(entries=>{
-
 entries.forEach(entry=>{
-
 if(entry.isIntersecting){
-
 entry.target.classList.add("visible");
-
 }
-
 });
-
 },{threshold:0.2});
 
 reveals.forEach(el=>observer.observe(el));
