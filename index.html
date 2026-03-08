@@ -138,15 +138,18 @@ align-items:center;
 
 }
 
-.map{
-
-width:360px;
-height:220px;
-overflow:hidden;
-flex-shrink:0;
-
+.map {
+    width: 360px;
+    height: 220px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-size: cover; /* Ensure the image covers the entire map area */
+    background-position: center; /* Center the image */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    cursor: pointer; /* Show a pointer cursor to indicate it's clickable */
 }
 
+    
 .map iframe{
 
 width:100%;
@@ -358,15 +361,17 @@ mit uns gemeinsam unsere Hochzeit zu feiern!
                 <strong>Standesamtliche Trauung</strong><br><br>
                 Standesamt Joachimsthal (Kaiserbahnhof)<br>
                 <i>Adresse: 16247 Joachimsthal</i><br><br>
-                Anfahrt: Vom Café Wildau aus gelangt man mit dem Auto in ca. 15 Minuten zum Trausaal im Kaiserbahnhof in Joachimsthal.
+                Anfahrt: Vom Café Wildau aus gelangt man mit dem Auto in ca. 15 Minuten zum Trausaal im Kaiserbahnhof in Joachimsthal.<br><br>
             </div>
 
-            <a class="map-link" href="https://maps.app.goo.gl/V3R4EttwXFBzbJK5A" target="_blank" rel="noopener noreferrer">
-                <div class="map">
-                    <iframe src="https://maps.google.com/maps?q=Standesamt%20Joachimsthal&t=&z=13&output=embed"></iframe>
-                </div>
+            <!-- Make the entire map clickable -->
+            <a class="map-link" href="https://maps.app.goo.gl/jct9N77oeRLNCTzeA" target="_blank" rel="noopener noreferrer">
+                <div class="map" style="background-image: url('standesamt-map.jpg');"></div>
             </a>
         </div>
+
+        <!-- Add extra blank line -->
+        <br>
 
         <!-- Hochzeitsfeier -->
         <div class="location">
@@ -379,10 +384,9 @@ mit uns gemeinsam unsere Hochzeit zu feiern!
                 Für den Abend der Party haben wir ein Shuttle organisiert, das Gäste bei Bedarf nach Eberswalde (zum Bahnhof oder Hotel) fahren kann.
             </div>
 
+            <!-- Make the entire map clickable -->
             <a class="map-link" href="https://maps.google.com/?q=Cafe+Wildau+Schorfheide" target="_blank" rel="noopener noreferrer">
-                <div class="map">
-                    <iframe src="https://maps.google.com/maps?q=Cafe%20Wildau%20Schorfheide&t=&z=13&output=embed"></iframe>
-                </div>
+                <div class="map" style="background-image: url('cafe-wildau-map.jpg');"></div>
             </a>
         </div>
 
