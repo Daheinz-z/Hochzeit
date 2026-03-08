@@ -16,15 +16,16 @@
 body{
 margin:0;
 font-family:'Inter',sans-serif;
-background:#f8f6f2;
+background:#f5f3ee;
 color:#333;
-line-height:1.6;
+line-height:1.7;
 overflow-x:hidden;
 }
 
 section{
-padding:80px 22px;
-max-width:900px;
+padding:90px 20px;
+width:100%;
+max-width:1100px;
 margin:auto;
 position:relative;
 }
@@ -35,8 +36,8 @@ font-family:'Playfair Display',serif;
 
 h2{
 text-align:center;
-margin-bottom:40px;
-font-size:32px;
+font-size:34px;
+margin-bottom:50px;
 }
 
 /* ---------- HERO ---------- */
@@ -50,7 +51,7 @@ justify-content:center;
 text-align:center;
 
 background:
-linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.85)),
+linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.9)),
 url("cafe-wildau.jpg");
 
 background-size:cover;
@@ -60,8 +61,8 @@ background-position:center;
 
 .hero h1{
 
-font-size:48px;
-letter-spacing:2px;
+font-size:52px;
+margin-bottom:10px;
 
 }
 
@@ -71,14 +72,34 @@ font-size:20px;
 
 }
 
-/* ---------- CARD ---------- */
+/* ---------- LEAF SEPARATOR ---------- */
+
+.separator{
+
+text-align:center;
+margin-top:-30px;
+margin-bottom:-30px;
+
+}
+
+.separator img{
+
+width:160px;
+opacity:.6;
+
+}
+
+/* ---------- ELEGANT CARD ---------- */
 
 .card{
 
-background:white;
-padding:34px;
-border-radius:16px;
-box-shadow:0 20px 50px rgba(0,0,0,0.06);
+background:linear-gradient(180deg,#ffffff,#fbfaf7);
+padding:40px;
+border-radius:18px;
+
+box-shadow:
+0 15px 50px rgba(0,0,0,0.06),
+0 2px 4px rgba(0,0,0,0.05);
 
 }
 
@@ -87,26 +108,27 @@ box-shadow:0 20px 50px rgba(0,0,0,0.06);
 .location{
 
 display:flex;
-flex-direction:column;
-gap:20px;
-margin-bottom:30px;
+gap:30px;
+margin-bottom:40px;
+align-items:flex-start;
 
 }
 
-@media(min-width:700px){
+@media(max-width:700px){
 
 .location{
-flex-direction:row;
+flex-direction:column;
 }
 
 }
 
 .hex{
 
-width:220px;
-height:220px;
+width:200px;
+height:200px;
 clip-path:polygon(25% 5%,75% 5%,100% 50%,75% 95%,25% 95%,0% 50%);
 overflow:hidden;
+flex-shrink:0;
 
 }
 
@@ -125,7 +147,7 @@ form input,select{
 width:100%;
 padding:12px;
 margin-bottom:14px;
-border-radius:6px;
+border-radius:8px;
 border:1px solid #ddd;
 font-size:15px;
 
@@ -149,14 +171,15 @@ cursor:pointer;
 .spotify{
 
 display:flex;
+gap:25px;
 align-items:center;
-gap:20px;
 
 }
 
 .spotify img{
 
 width:90px;
+border-radius:10px;
 
 }
 
@@ -166,12 +189,11 @@ footer{
 
 text-align:center;
 padding:60px;
-font-size:14px;
 color:#777;
 
 }
 
-/* ---------- SCROLL ANIMATION (APPLE STYLE) ---------- */
+/* ---------- SCROLL ANIMATION ---------- */
 
 .reveal{
 
@@ -185,34 +207,6 @@ transition:all 1.2s cubic-bezier(.19,1,.22,1);
 
 opacity:1;
 transform:translateY(0);
-
-}
-
-.delay1{transition-delay:0.2s}
-.delay2{transition-delay:0.4s}
-.delay3{transition-delay:0.6s}
-
-/* ---------- PARALLAX LEAVES ---------- */
-
-.leaf{
-
-position:absolute;
-width:140px;
-opacity:.5;
-pointer-events:none;
-transition:transform .2s linear;
-
-}
-
-.leaf.left{
-
-left:-40px;
-
-}
-
-.leaf.right{
-
-right:-40px;
 
 }
 
@@ -234,54 +228,74 @@ right:-40px;
 
 <p>Werbellinsee</p>
 
-</div>
-
-</section>
-
-<!-- Tagesablauf -->
-
-<section class="reveal">
-
-<img class="leaf left parallax" data-speed="2" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
-
-<h2>Tagesablauf</h2>
-
-<div class="card reveal delay1">
-
-<p><strong>Freitag 03.07</strong></p>
+<br>
 
 <p>
 
-Wenn ihr Lust habt, könnt ihr schon am Vortag anreisen  
-und mit uns einen entspannten Abend im Café Wildau verbringen.
+<strong>Ihr Lieben</strong>,<br><br>
+
+am 04. Juli 2026 laden wir euch ganz herzlich ein,  
+mit uns gemeinsam unsere Hochzeit zu feiern!
 
 </p>
-
-<p><strong>Samstag 04.07</strong></p>
-
-<ul>
-
-<li>14:00 Trauung</li>
-<li>15:30 Sektempfang</li>
-<li>16:30 Kaffee & Kuchen</li>
-<li>19:30 Abendessen</li>
-<li>22:00 Party</li>
-
-</ul>
 
 </div>
 
 </section>
 
-<!-- Locations -->
+<div class="separator">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
+</div>
+
+<!-- TAGESABLAUF -->
 
 <section class="reveal">
 
-<img class="leaf right parallax" data-speed="3" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
+<h2>Tagesablauf</h2>
+
+<div class="card">
+
+<p>
+
+<strong>Freitag, 03.07:</strong><br>
+
+• Wenn ihr Lust habt, könnt ihr gerne schon am Vortag anreisen und mit uns einen entspannten Nachmittag/Abend im Café Wildau am Werbellinsee verbringen.<br>
+
+• Wir laden alle anwesenden Gäste auf Snacks und ein paar Drinks ein.<br>
+
+• Wir persönlich werden ab ca. 14:00 Uhr vor Ort sein - es gibt aber keine feste Startzeit.<br><br>
+
+<strong>Samstag, 04.07:</strong><br>
+
+• 14:00 Uhr: Trauung im Standesamt Joachimsthal (Schorfheide)<br>
+
+○ Im Standesamt selbst gibt es nur 40 Sitzplätze. Ihr seid trotzdem alle herzlich eingeladen, euch mit reinzuquetschen oder mit uns draußen in Empfang zu nehmen.<br>
+
+• 15:30 Uhr: Sektempfang am Café Wildau<br>
+
+• 16:00/16:30 Café & Kuchen<br>
+
+• 19:30 Uhr Abendessen<br>
+
+• 21:30/22:00 Uhr Party
+
+</p>
+
+</div>
+
+</section>
+
+<div class="separator">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
+</div>
+
+<!-- LOCATIONS -->
+
+<section class="reveal">
 
 <h2>Locations</h2>
 
-<div class="card reveal delay1">
+<div class="card">
 
 <div class="location">
 
@@ -291,17 +305,15 @@ und mit uns einen entspannten Abend im Café Wildau verbringen.
 
 </div>
 
-<div>
-
-<strong>Standesamt Joachimsthal</strong>
-
 <p>
 
-16247 Joachimsthal
+<strong>Standesamtliche Trauung</strong><br>
+
+Standesamt Joachimsthal (Kaiserbahnhof) - 16247 Joachimsthal<br>
+
+Anfahrt: Vom Café Wildau aus gelangt man mit dem Auto in ca. 15 Minuten zum Trausaal im Kaiserbahnhof in Joachimsthal.
 
 </p>
-
-</div>
 
 </div>
 
@@ -313,14 +325,17 @@ und mit uns einen entspannten Abend im Café Wildau verbringen.
 
 </div>
 
-<div>
-
-<strong>Café Wildau</strong>
-
 <p>
 
-Wildau 19  
-16244 Schorfheide
+<strong>Hochzeitsfeier</strong><br>
+
+Café Wildau, Wildau 19, 16244 Schorfheide<br>
+
+Anreise mit dem Auto: Ca. 50 Minuten von Berlin Zentrum. Parkmöglichkeiten gibt es direkt am Hotel<br>
+
+Anreise mit dem Zug: von Berlin HBF mit dem RE3 bis Eberswalde (ca. 40 Minuten). Von dort entweder mit dem Bus weiter Eichhorst (ganz schönes Gegurke), oder ein Teil der Hochzeitsgesellschaft spielt Shuttleservice.<br><br>
+
+Für den Abend der Party haben wir ein Shuttle organisiert, das Gäste bei Bedarf nach Eberswalde (zum Bahnhof oder Hotel) fahren kann.
 
 </p>
 
@@ -328,63 +343,71 @@ Wildau 19
 
 </div>
 
-</div>
-
 </section>
 
-<!-- Unterkunft -->
+<div class="separator">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
+</div>
+
+<!-- UNTERKUNFT -->
 
 <section class="reveal">
 
-<img class="leaf left parallax" data-speed="4" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
-
 <h2>Unterkunft & Verpflegung</h2>
 
-<div class="card reveal delay1">
+<div class="card">
 
 <p>
 
-Viele Gäste haben bereits im Café Wildau oder in Ferienhäusern rund um den Werbellinsee gebucht.
+<strong>Unterkunft</strong><br>
 
-</p>
+Die meisten von euch haben sich bereits im Café Wildau (Hotel, Pension oder Ferienhäuser) eingemietet.<br>
 
-<p>
+Sollte jemand noch keine Plätze haben, gibt es aber in der Region (Werbellinsee und Eberswalde) noch weitere Ferienwohnungen und Apartments.
 
-Das Café Wildau wird uns mit reichlich Essen und Getränken versorgen.
+<br><br>
+
+<strong>Essen und Getränke</strong><br>
+
+Das Café Wildau wird uns am 04. Juli mit (hoffentlich) ausreichend Essen und Getränken versorgen. Um die Planung für das Buffet zu erleichtern, wäre es super, wenn ihr im untenstehenden Formular für alle Gäste entsprechende Häkchen bei den kulinarischen Vorlieben setzen könntet.
 
 </p>
 
 </div>
 
 </section>
+
+<div class="separator">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
+</div>
 
 <!-- RSVP -->
 
 <section class="reveal">
 
-<img class="leaf right parallax" data-speed="3" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
-
 <h2>Rückmeldung</h2>
 
-<div class="card reveal delay1">
+<div class="card">
+
+<p><strong>Bitte gebt uns bis zum 15.04 eine Rückmeldung</strong></p>
 
 <form>
 
 <input type="text" placeholder="Vor- und Nachname">
 
 <select>
-
-<option>Anreisetag</option>
-<option>03.07</option>
-<option>04.07</option>
-
+<option>Tag der Anreise</option>
+<option>03.07.2026</option>
+<option>04.07.2026</option>
 </select>
 
-<input type="number" placeholder="Personen">
+<input type="text" placeholder="Anzahl der Personen">
 
-<input type="number" placeholder="Vegetarisch">
+<input type="text" placeholder="Davon ohne besondere Essensvorlieben">
 
-<input type="number" placeholder="Vegan">
+<input type="text" placeholder="Davon vegetarisch">
+
+<input type="text" placeholder="Davon vegan">
 
 <button>Antwort senden</button>
 
@@ -394,19 +417,21 @@ Das Café Wildau wird uns mit reichlich Essen und Getränken versorgen.
 
 </section>
 
-<!-- Spotify -->
+<div class="separator">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
+</div>
+
+<!-- SPOTIFY -->
 
 <section class="reveal">
 
-<img class="leaf left parallax" data-speed="3" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
-
 <h2>Songwünsche</h2>
 
-<div class="card reveal delay1">
+<div class="card">
 
 <div class="spotify">
 
-<a href="https://open.spotify.com/" target="_blank">
+<a href="https://open.spotify.com/playlist/6U6mrEpkEK5n6ZRZJRHPjs?si=3a7asa5TQVip1Yp5mLmPkQ&pi=NUPDuqEUSRiFh&nd=1&dlsi=e4c1243f02424ec4" target="_blank">
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg">
 
@@ -414,7 +439,7 @@ Das Café Wildau wird uns mit reichlich Essen und Getränken versorgen.
 
 <p>
 
-Fügt gerne eure Lieblingssongs zu unserer Party Playlist hinzu!
+Damit alle auf ihre Kosten kommen, seid ihr herzlich eingeladen, schon vorab Songwünsche auf die Spotify Playlist zu packen (keine Sorge, wir werden die Playlist kurz vor der Hochzeit nochmal kuratieren ;) )
 
 </p>
 
@@ -431,8 +456,6 @@ Wir freuen uns sehr darauf, diesen Tag mit euch zu feiern ❤️
 </footer>
 
 <script>
-
-/* ---------- SCROLL REVEAL ---------- */
 
 const reveals=document.querySelectorAll(".reveal");
 
@@ -451,23 +474,6 @@ entry.target.classList.add("visible");
 },{threshold:0.2});
 
 reveals.forEach(el=>observer.observe(el));
-
-
-/* ---------- PARALLAX LEAVES ---------- */
-
-window.addEventListener("scroll",()=>{
-
-document.querySelectorAll(".parallax").forEach(el=>{
-
-const speed=el.dataset.speed;
-
-const y=window.scrollY/speed;
-
-el.style.transform="translateY("+y+"px)";
-
-});
-
-});
 
 </script>
 
