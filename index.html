@@ -22,7 +22,7 @@ line-height:1.6;
 }
 
 section{
-padding:80px 20px;
+padding:55px 20px;
 max-width:1100px;
 margin:auto;
 }
@@ -33,8 +33,8 @@ font-family:'Playfair Display',serif;
 
 h2{
 text-align:center;
-font-size:34px;
-margin-bottom:40px;
+font-size:32px;
+margin-bottom:30px;
 }
 
 /* HERO */
@@ -51,74 +51,114 @@ justify-content:center;
 }
 
 .hero-inner{
+
 position:sticky;
 top:120px;
 text-align:center;
-max-width:600px;
+max-width:700px;
+
 }
 
-/* CARDS */
+.hero h1{
+font-size:72px;
+margin-bottom:10px;
+}
 
-.card{
-background:linear-gradient(180deg,#ffffff,#fbfaf7);
-padding:40px;
-border-radius:18px;
-box-shadow:
-0 15px 50px rgba(0,0,0,0.06),
-0 2px 4px rgba(0,0,0,0.05);
+.hero .date{
+font-size:30px;
+font-weight:600;
+}
+
+.hero .place{
+font-size:26px;
+margin-bottom:40px;
 }
 
 /* LEAF SEPARATOR */
 
 .separator{
 text-align:center;
-margin:60px 0;
+margin:12px 0;
 }
 
 .separator img{
-width:200px;
+width:180px;
 opacity:0.7;
+}
+
+/* CARDS */
+
+.card{
+background:linear-gradient(180deg,#ffffff,#fbfaf7);
+padding:35px;
+border-radius:18px;
+box-shadow:
+0 15px 50px rgba(0,0,0,0.06),
+0 2px 4px rgba(0,0,0,0.05);
 }
 
 /* TAGESABLAUF */
 
 .timeline ul{
-padding-left:20px;
-margin-top:10px;
+padding-left:22px;
 }
 
 .timeline li{
 margin-bottom:8px;
+list-style:none;
+position:relative;
+padding-left:18px;
+}
+
+.timeline li::before{
+
+content:"❧";
+position:absolute;
+left:0;
+color:#6c8a6e;
+font-size:16px;
+
 }
 
 .timeline ul ul{
-margin-top:6px;
-margin-bottom:10px;
-padding-left:20px;
-list-style-type:circle;
+padding-left:18px;
 }
 
-/* LOCATIONS */
+.timeline ul ul li::before{
+content:"–";
+color:#666;
+}
+
+/* LOCATION */
 
 .location{
+
 display:flex;
-gap:30px;
+gap:35px;
 margin-bottom:40px;
 align-items:flex-start;
+
 }
 
 .map{
-width:350px;
+
+width:360px;
 height:220px;
-border:2px solid black;
 overflow:hidden;
 flex-shrink:0;
+
 }
 
 .map iframe{
+
 width:100%;
 height:100%;
 border:0;
+
+}
+
+.map-link{
+display:block;
 }
 
 @media(max-width:900px){
@@ -136,14 +176,18 @@ width:100%;
 /* UNTERKUNFT */
 
 .split{
+
 display:flex;
 gap:30px;
 align-items:center;
+
 }
 
 .split img{
+
 width:350px;
 border-radius:12px;
+
 }
 
 @media(max-width:900px){
@@ -175,9 +219,8 @@ box-sizing:border-box;
 
 }
 
-/* BUTTON */
-
 button{
+
 background:#5f7f63;
 border:none;
 padding:14px;
@@ -186,27 +229,34 @@ color:white;
 border-radius:8px;
 font-size:16px;
 cursor:pointer;
+
 }
 
 /* SPOTIFY */
 
 .spotify{
+
 display:flex;
 align-items:center;
 gap:25px;
+
 }
 
 .spotify img{
+
 width:90px;
 border-radius:10px;
+
 }
 
 /* FOOTER */
 
 footer{
+
 text-align:center;
-padding:60px;
+padding:50px;
 color:#777;
+
 }
 
 </style>
@@ -222,17 +272,15 @@ color:#777;
 
 <h1>Regina & David</h1>
 
-<p><strong>04. Juli 2026</strong></p>
+<div class="date">04. Juli 2026</div>
 
-<p>Werbellinsee</p>
-
-<br>
+<div class="place">Werbellinsee</div>
 
 <p>
 
-<strong>Ihr Lieben</strong>,<br><br>
+<strong>Ihr Lieben,</strong><br><br>
 
-am 04. Juli 2026 laden wir euch ganz herzlich ein,
+am 04. Juli 2026 laden wir euch ganz herzlich ein,<br>
 mit uns gemeinsam unsere Hochzeit zu feiern!
 
 </p>
@@ -265,6 +313,8 @@ mit uns gemeinsam unsere Hochzeit zu feiern!
 
 </ul>
 
+<br>
+
 <strong>Samstag, 04.07:</strong>
 
 <ul>
@@ -272,7 +322,9 @@ mit uns gemeinsam unsere Hochzeit zu feiern!
 <li>14:00 Uhr: Trauung im Standesamt Joachimsthal (Schorfheide)
 
 <ul>
+
 <li>Im Standesamt selbst gibt es nur 40 Sitzplätze. Ihr seid trotzdem alle herzlich eingeladen, euch mit reinzuquetschen oder mit uns draußen in Empfang zu nehmen.</li>
+
 </ul>
 
 </li>
@@ -317,7 +369,7 @@ Anfahrt: Vom Café Wildau aus gelangt man mit dem Auto in ca. 15 Minuten zum Tra
 
 </div>
 
-<a href="https://maps.app.goo.gl/V3R4EttwXFBzbJK5A" target="_blank">
+<a class="map-link" href="https://maps.app.goo.gl/V3R4EttwXFBzbJK5A" target="_blank">
 
 <div class="map">
 
@@ -329,14 +381,13 @@ Anfahrt: Vom Café Wildau aus gelangt man mit dem Auto in ca. 15 Minuten zum Tra
 
 </div>
 
-
 <div class="location">
 
 <div>
 
 <strong>Hochzeitsfeier</strong><br><br>
 
-Café Wildau<br>
+<strong>Café Wildau</strong><br>
 
 <i>Adresse: Wildau 19, 16244 Schorfheide</i><br><br>
 
@@ -348,11 +399,15 @@ Für den Abend der Party haben wir ein Shuttle organisiert, das Gäste bei Bedar
 
 </div>
 
+<a class="map-link" href="https://maps.google.com/?q=Cafe+Wildau+Schorfheide" target="_blank">
+
 <div class="map">
 
 <iframe src="https://maps.google.com/maps?q=Cafe%20Wildau%20Schorfheide&t=&z=13&output=embed"></iframe>
 
 </div>
+
+</a>
 
 </div>
 
@@ -372,7 +427,7 @@ Für den Abend der Party haben wir ein Shuttle organisiert, das Gäste bei Bedar
 
 <div class="card split">
 
-<img src="cafe.jpg">
+<img src="cafe.png">
 
 <div>
 
@@ -448,7 +503,7 @@ Um die Planung für das Buffet zu erleichtern, wäre es super, wenn ihr im unten
 <img src="leaves.png">
 </div>
 
-<!-- SPOTIFY -->
+<!-- SONGWÜNSCHE -->
 
 <section>
 
