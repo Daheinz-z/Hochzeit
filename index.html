@@ -1,14 +1,541 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Regina & David – Hochzeit</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
 <style>
-  .hero-inner {
-    position: sticky;
-    top: 0;
-  }
-  .hero {
-    background-attachment: fixed;
-  }
-  .separator img {
-    width: 280px;
-    margin: -30px 0 -20px 0;
-  }
+
+/* BASE */
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:#f5f3ee;
+color:#333;
+line-height:1.6;
+}
+
+section{
+padding:55px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+h1,h2{
+font-family:'Playfair Display',serif;
+}
+
+h2{
+text-align:center;
+font-size:32px;
+margin-bottom:30px;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.9)),
+url("cafe-wildau.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+}
+
+.hero-inner{
+
+position:sticky;
+top:120px;
+text-align:center;
+max-width:700px;
+
+}
+
+.hero h1{
+font-size:72px;
+margin-bottom:10px;
+}
+
+.hero .date{
+font-size:30px;
+font-weight:600;
+}
+
+.hero .place{
+font-size:26px;
+margin-bottom:40px;
+}
+
+/* LEAF SEPARATOR */
+
+.separator{
+text-align:center;
+margin:12px 0;
+}
+
+.separator img{
+width:180px;
+opacity:0.7;
+}
+
+/* CARDS */
+
+.card{
+background:linear-gradient(180deg,#ffffff,#fbfaf7);
+padding:35px;
+border-radius:18px;
+box-shadow:
+0 15px 50px rgba(0,0,0,0.06),
+0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* TAGESABLAUF */
+
+.timeline ul{
+padding-left:22px;
+}
+
+.timeline li{
+margin-bottom:8px;
+list-style:none;
+position:relative;
+padding-left:18px;
+}
+
+.timeline li::before{
+
+content:"❧";
+position:absolute;
+left:0;
+color:#6c8a6e;
+font-size:16px;
+
+}
+
+.timeline ul ul{
+padding-left:18px;
+}
+
+.timeline ul ul li::before{
+content:"–";
+color:#666;
+}
+
+/* LOCATION */
+
+.location{
+
+display:flex;
+gap:35px;
+margin-bottom:40px;
+align-items:flex-start;
+
+}
+
+.map{
+
+width:360px;
+height:220px;
+overflow:hidden;
+flex-shrink:0;
+
+}
+
+.map iframe{
+
+width:100%;
+height:100%;
+border:0;
+
+}
+
+.map-link{
+display:block;
+}
+
+@media(max-width:900px){
+
+.location{
+flex-direction:column;
+}
+
+.map{
+width:100%;
+}
+
+}
+
+/* UNTERKUNFT */
+
+.split{
+
+display:flex;
+gap:30px;
+align-items:center;
+
+}
+
+.split img{
+
+width:350px;
+border-radius:12px;
+
+}
+
+@media(max-width:900px){
+
+.split{
+flex-direction:column;
+}
+
+.split img{
+width:100%;
+}
+
+}
+
+/* FORM */
+
+form input,
+form select{
+
+width:100%;
+padding:12px;
+margin-bottom:14px;
+
+border-radius:8px;
+border:1px solid #ddd;
+
+font-size:15px;
+box-sizing:border-box;
+
+}
+
+button{
+
+background:#5f7f63;
+border:none;
+padding:14px;
+width:100%;
+color:white;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+
+}
+
+/* SPOTIFY */
+
+.spotify{
+
+display:flex;
+align-items:center;
+gap:25px;
+
+}
+
+.spotify img{
+
+width:90px;
+border-radius:10px;
+
+}
+
+/* FOOTER */
+
+footer{
+
+text-align:center;
+padding:50px;
+color:#777;
+
+}
+
 </style>
-<!-- Other HTML content goes here -->
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-inner">
+
+<h1>Regina & David</h1>
+
+<div class="date">04. Juli 2026</div>
+
+<div class="place">Werbellinsee</div>
+
+<p>
+
+<strong>Ihr Lieben,</strong><br><br>
+
+am 04. Juli 2026 laden wir euch ganz herzlich ein,<br>
+mit uns gemeinsam unsere Hochzeit zu feiern!
+
+</p>
+
+</div>
+
+</section>
+
+<div class="separator">
+<img src="leaves.png">
+</div>
+
+<!-- TAGESABLAUF -->
+
+<section>
+
+<h2>Tagesablauf</h2>
+
+<div class="card timeline">
+
+<strong>Freitag, 03.07:</strong>
+
+<ul>
+
+<li>Wenn ihr Lust habt, könnt ihr gerne schon am Vortag anreisen und mit uns einen entspannten Nachmittag/Abend im Café Wildau am Werbellinsee verbringen.</li>
+
+<li>Wir laden alle anwesenden Gäste auf Snacks und ein paar Drinks ein.</li>
+
+<li>Wir persönlich werden ab ca. 14:00 Uhr vor Ort sein - es gibt aber keine feste Startzeit.</li>
+
+</ul>
+
+<br>
+
+<strong>Samstag, 04.07:</strong>
+
+<ul>
+
+<li>14:00 Uhr: Trauung im Standesamt Joachimsthal (Kaiserbahnhof)
+
+<ul>
+
+<li>Im Standesamt selbst gibt es nur 40 Sitzplätze. Ihr seid trotzdem alle herzlich eingeladen, euch mit reinzuquetschen oder mit uns draußen in Empfang zu nehmen.</li>
+
+</ul>
+
+</li>
+
+<li>15:30 Uhr: Sektempfang am Café Wildau</li>
+
+<li>16:00/16:30 Café & Kuchen</li>
+
+<li>19:30 Uhr Abendessen</li>
+
+<li>21:30/22:00 Uhr Party</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<div class="separator">
+<img src="leaves.png">
+</div>
+
+<!-- LOCATIONS -->
+
+<section>
+
+<h2>Locations</h2>
+
+<div class="card">
+
+<div class="location">
+
+<div>
+
+<strong>Standesamtliche Trauung</strong><br><br>
+
+Standesamt Joachimsthal (Kaiserbahnhof)<br>
+
+<i>Adresse: 16247 Joachimsthal</i><br><br>
+
+Anfahrt: Vom Café Wildau aus gelangt man mit dem Auto in ca. 15 Minuten zum Trausaal im Kaiserbahnhof in Joachimsthal.
+
+</div>
+
+<a class="map-link" href="https://maps.app.goo.gl/V3R4EttwXFBzbJK5A" target="_blank">
+
+<div class="map">
+
+<iframe src="https://maps.app.goo.gl/V3R4EttwXFBzbJK5A"></iframe>
+
+</div>
+
+</a>
+
+</div>
+
+<div class="location">
+
+<div>
+
+<strong>Hochzeitsfeier</strong><br><br>
+
+<strong>Café Wildau</strong><br>
+
+<i>Adresse: Wildau 19, 16244 Schorfheide</i><br><br>
+
+Anreise mit dem Auto: Ca. 50 Minuten von Berlin Zentrum. Parkmöglichkeiten gibt es direkt am Hotel<br><br>
+
+Anreise mit dem Zug: von Berlin HBF mit dem RE3 bis Eberswalde (ca. 40 Minuten). Von dort entweder mit dem Bus weiter Eichhorst (ganz schönes Gegurke), oder ein Teil der Hochzeitsgesellschaft spielt Shuttleservice.<br><br>
+
+Für den Abend der Party haben wir ein Shuttle organisiert, das Gäste bei Bedarf nach Eberswalde (zum Bahnhof oder Hotel) fahren kann.
+
+</div>
+
+<a class="map-link" href="https://maps.google.com/?q=Cafe+Wildau+Schorfheide" target="_blank">
+
+<div class="map">
+
+<iframe src="https://maps.google.com/maps?q=Cafe%20Wildau%20Schorfheide&t=&z=13&output=embed"></iframe>
+
+</div>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="separator">
+<img src="leaves.png">
+</div>
+
+<!-- UNTERKUNFT -->
+
+<section>
+
+<h2>Unterkunft</h2>
+
+<div class="card split">
+
+<img src="cafe.jpg">
+
+<div>
+
+Die meisten von euch haben sich bereits im Café Wildau (Hotel, Pension oder Ferienhäuser) eingemietet.<br><br>
+
+Sollte jemand noch keine Plätze haben, gibt es aber in der Region (Werbellinsee und Eberswalde) noch weitere Ferienwohnungen und Apartments.
+
+</div>
+
+</div>
+
+</section>
+
+<div class="separator">
+<img src="leaves.png">
+</div>
+
+<section>
+
+<h2>Essen und Getränke</h2>
+
+<div class="card">
+
+Das Café Wildau wird uns am 04. Juli mit (hoffentlich) ausreichend Essen und Getränken versorgen.<br><br>
+
+Um die Planung für das Buffet zu erleichtern, wäre es super, wenn ihr im untenstehenden Formular für alle Gäste entsprechende Angaben bei den kulinarischen Vorlieben setzen könntet.
+
+</div>
+
+</section>
+
+<div class="separator">
+<img src="leaves.png">
+</div>
+
+<!-- RSVP -->
+
+<section>
+
+<h2>Rückmeldung</h2>
+
+<div class="card">
+
+<p><strong>Bitte gebt uns bis zum 15.04 eine Rückmeldung</strong></p>
+
+<form>
+
+<input type="text" placeholder="Vor- und Nachname">
+
+<select>
+<option disabled selected>Tag der Anreise</option>
+<option>03.07.2026</option>
+<option>04.07.2026</option>
+</select>
+
+<input type="text" placeholder="Anzahl der Personen">
+
+<input type="text" placeholder="Davon ohne besondere Essensvorlieben">
+
+<input type="text" placeholder="Davon vegetarisch">
+
+<input type="text" placeholder="Davon vegan">
+
+<button>Antwort senden</button>
+
+</form>
+
+</div>
+
+</section>
+
+<div class="separator">
+<img src="leaves.png">
+</div>
+
+<!-- SONGWÜNSCHE -->
+
+<section>
+
+<h2>Songwünsche</h2>
+
+<div class="card">
+
+<div class="spotify">
+
+<a href="https://open.spotify.com/playlist/6U6mrEpkEK5n6ZRZJRHPjs?si=3a7asa5TQVip1Yp5mLmPkQ&pi=NUPDuqEUSRiFh&nd=1&dlsi=e4c1243f02424ec4" target="_blank">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg">
+
+</a>
+
+<p>
+
+Damit alle auf ihre Kosten kommen, seid ihr herzlich eingeladen, schon vorab Songwünsche auf die Spotify Playlist zu packen (keine Sorge, wir werden die Playlist kurz vor der Hochzeit nochmal kuratieren ;) )
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+Wir freuen uns sehr darauf, diesen Tag mit euch zu feiern ❤️
+
+</footer>
+
+</body>
+</html>
