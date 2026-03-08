@@ -11,18 +11,18 @@
 
 <style>
 
-/* ---------- BASE ---------- */
+/* BASE */
 
 body{
 margin:0;
 font-family:'Inter',sans-serif;
 background:#f5f3ee;
 color:#333;
-line-height:1.7;
+line-height:1.6;
 }
 
 section{
-padding:90px 20px;
+padding:80px 20px;
 max-width:1100px;
 margin:auto;
 }
@@ -34,220 +34,182 @@ font-family:'Playfair Display',serif;
 h2{
 text-align:center;
 font-size:34px;
-margin-bottom:50px;
+margin-bottom:40px;
 }
 
-/* ---------- HERO ---------- */
+/* HERO */
 
 .hero{
-min-height:100vh;
-display:flex;
-align-items:flex-start;
-justify-content:center;
-text-align:center;
-
-padding-top:120px;
-
+height:100vh;
 background:
 linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.9)),
 url("cafe-wildau.jpg");
-
 background-size:cover;
 background-position:center;
+display:flex;
+justify-content:center;
 }
 
-.hero h1{
-font-size:54px;
-margin-bottom:10px;
+.hero-inner{
+position:sticky;
+top:120px;
+text-align:center;
+max-width:600px;
 }
 
-/* ---------- CARD ---------- */
+/* CARDS */
 
 .card{
-
 background:linear-gradient(180deg,#ffffff,#fbfaf7);
-
 padding:40px;
-
 border-radius:18px;
-
 box-shadow:
 0 15px 50px rgba(0,0,0,0.06),
 0 2px 4px rgba(0,0,0,0.05);
-
 }
 
-/* ---------- TAGESABLAUF ---------- */
+/* LEAF SEPARATOR */
 
-.timeline{
-
-margin-top:20px;
-
+.separator{
+text-align:center;
+margin:60px 0;
 }
+
+.separator img{
+width:200px;
+opacity:0.7;
+}
+
+/* TAGESABLAUF */
 
 .timeline ul{
-
-padding-left:28px;
-
+padding-left:20px;
+margin-top:10px;
 }
 
 .timeline li{
-
-margin-bottom:14px;
-padding-left:6px;
-
+margin-bottom:8px;
 }
 
-.timeline li::marker{
-
-font-size:18px;
-color:#5f7f63;
-
+.timeline ul ul{
+margin-top:6px;
+margin-bottom:10px;
+padding-left:20px;
+list-style-type:circle;
 }
 
-/* ---------- LOCATION ---------- */
+/* LOCATIONS */
 
 .location{
-
 display:flex;
 gap:30px;
 margin-bottom:40px;
 align-items:flex-start;
-
 }
 
-@media(max-width:700px){
+.map{
+width:350px;
+height:220px;
+border:2px solid black;
+overflow:hidden;
+flex-shrink:0;
+}
+
+.map iframe{
+width:100%;
+height:100%;
+border:0;
+}
+
+@media(max-width:900px){
 
 .location{
 flex-direction:column;
 }
 
-}
-
-.hex{
-
-width:200px;
-height:200px;
-
-border:2px solid black;
-
-clip-path:polygon(25% 5%,75% 5%,100% 50%,75% 95%,25% 95%,0% 50%);
-
-overflow:hidden;
-flex-shrink:0;
-
-cursor:pointer;
-
-}
-
-.hex iframe{
-
+.map{
 width:100%;
-height:100%;
-border:0;
-pointer-events:none;
+}
 
 }
 
-.location-text{
+/* UNTERKUNFT */
 
-line-height:1.7;
+.split{
+display:flex;
+gap:30px;
+align-items:center;
+}
+
+.split img{
+width:350px;
+border-radius:12px;
+}
+
+@media(max-width:900px){
+
+.split{
+flex-direction:column;
+}
+
+.split img{
+width:100%;
+}
 
 }
 
-.location-text strong{
-
-font-size:18px;
-
-}
-
-/* ---------- FORM ---------- */
+/* FORM */
 
 form input,
 form select{
 
 width:100%;
-box-sizing:border-box;
-
 padding:12px;
-
 margin-bottom:14px;
 
 border-radius:8px;
-
 border:1px solid #ddd;
 
 font-size:15px;
+box-sizing:border-box;
 
 }
 
-/* ---------- BUTTON ---------- */
+/* BUTTON */
 
 button{
-
 background:#5f7f63;
 border:none;
-
 padding:14px;
-
 width:100%;
-
 color:white;
-
 border-radius:8px;
-
 font-size:16px;
-
 cursor:pointer;
-
 }
 
-/* ---------- SPOTIFY ---------- */
+/* SPOTIFY */
 
 .spotify{
-
 display:flex;
-gap:25px;
 align-items:center;
-
+gap:25px;
 }
 
 .spotify img{
-
 width:90px;
 border-radius:10px;
-
 }
 
-/* ---------- FOOTER ---------- */
+/* FOOTER */
 
 footer{
-
 text-align:center;
 padding:60px;
 color:#777;
-
-}
-
-/* ---------- SCROLL ANIMATION ---------- */
-
-.reveal{
-
-opacity:0;
-transform:translateY(40px);
-transition:all 1.2s cubic-bezier(.19,1,.22,1);
-
-}
-
-.reveal.visible{
-
-opacity:1;
-transform:translateY(0);
-
 }
 
 </style>
-
 </head>
 
 <body>
@@ -256,7 +218,7 @@ transform:translateY(0);
 
 <section class="hero">
 
-<div class="reveal">
+<div class="hero-inner">
 
 <h1>Regina & David</h1>
 
@@ -270,7 +232,7 @@ transform:translateY(0);
 
 <strong>Ihr Lieben</strong>,<br><br>
 
-am 04. Juli 2026 laden wir euch ganz herzlich ein,<br>
+am 04. Juli 2026 laden wir euch ganz herzlich ein,
 mit uns gemeinsam unsere Hochzeit zu feiern!
 
 </p>
@@ -279,9 +241,13 @@ mit uns gemeinsam unsere Hochzeit zu feiern!
 
 </section>
 
+<div class="separator">
+<img src="leaves.png">
+</div>
+
 <!-- TAGESABLAUF -->
 
-<section class="reveal">
+<section>
 
 <h2>Tagesablauf</h2>
 
@@ -299,15 +265,17 @@ mit uns gemeinsam unsere Hochzeit zu feiern!
 
 </ul>
 
-<br>
-
 <strong>Samstag, 04.07:</strong>
 
 <ul>
 
-<li>14:00 Uhr: Trauung im Standesamt Joachimsthal (Schorfheide)</li>
+<li>14:00 Uhr: Trauung im Standesamt Joachimsthal (Schorfheide)
 
+<ul>
 <li>Im Standesamt selbst gibt es nur 40 Sitzplätze. Ihr seid trotzdem alle herzlich eingeladen, euch mit reinzuquetschen oder mit uns draußen in Empfang zu nehmen.</li>
+</ul>
+
+</li>
 
 <li>15:30 Uhr: Sektempfang am Café Wildau</li>
 
@@ -323,9 +291,13 @@ mit uns gemeinsam unsere Hochzeit zu feiern!
 
 </section>
 
+<div class="separator">
+<img src="leaves.png">
+</div>
+
 <!-- LOCATIONS -->
 
-<section class="reveal">
+<section>
 
 <h2>Locations</h2>
 
@@ -333,17 +305,7 @@ mit uns gemeinsam unsere Hochzeit zu feiern!
 
 <div class="location">
 
-<a href="https://maps.google.com/?q=Standesamt+Joachimsthal" target="_blank">
-
-<div class="hex">
-
-<iframe src="https://maps.google.com/maps?q=Standesamt%20Joachimsthal&t=&z=13&output=embed"></iframe>
-
-</div>
-
-</a>
-
-<div class="location-text">
+<div>
 
 <strong>Standesamtliche Trauung</strong><br><br>
 
@@ -355,21 +317,22 @@ Anfahrt: Vom Café Wildau aus gelangt man mit dem Auto in ca. 15 Minuten zum Tra
 
 </div>
 
-</div>
+<a href="https://maps.app.goo.gl/V3R4EttwXFBzbJK5A" target="_blank">
 
-<div class="location">
+<div class="map">
 
-<a href="https://maps.google.com/?q=Cafe+Wildau+Schorfheide" target="_blank">
-
-<div class="hex">
-
-<iframe src="https://maps.google.com/maps?q=Cafe%20Wildau%20Schorfheide&t=&z=13&output=embed"></iframe>
+<iframe src="https://maps.google.com/maps?q=Standesamt%20Joachimsthal&t=&z=13&output=embed"></iframe>
 
 </div>
 
 </a>
 
-<div class="location-text">
+</div>
+
+
+<div class="location">
+
+<div>
 
 <strong>Hochzeitsfeier</strong><br><br>
 
@@ -377,7 +340,7 @@ Café Wildau<br>
 
 <i>Adresse: Wildau 19, 16244 Schorfheide</i><br><br>
 
-Anreise mit dem Auto: Ca. 50 Minuten von Berlin Zentrum. Parkmöglichkeiten gibt es direkt am Hotel.<br><br>
+Anreise mit dem Auto: Ca. 50 Minuten von Berlin Zentrum. Parkmöglichkeiten gibt es direkt am Hotel<br><br>
 
 Anreise mit dem Zug: von Berlin HBF mit dem RE3 bis Eberswalde (ca. 40 Minuten). Von dort entweder mit dem Bus weiter Eichhorst (ganz schönes Gegurke), oder ein Teil der Hochzeitsgesellschaft spielt Shuttleservice.<br><br>
 
@@ -385,19 +348,33 @@ Für den Abend der Party haben wir ein Shuttle organisiert, das Gäste bei Bedar
 
 </div>
 
+<div class="map">
+
+<iframe src="https://maps.google.com/maps?q=Cafe%20Wildau%20Schorfheide&t=&z=13&output=embed"></iframe>
+
+</div>
+
 </div>
 
 </div>
 
 </section>
 
+<div class="separator">
+<img src="leaves.png">
+</div>
+
 <!-- UNTERKUNFT -->
 
-<section class="reveal">
+<section>
 
 <h2>Unterkunft</h2>
 
-<div class="card">
+<div class="card split">
+
+<img src="cafe.jpg">
+
+<div>
 
 Die meisten von euch haben sich bereits im Café Wildau (Hotel, Pension oder Ferienhäuser) eingemietet.<br><br>
 
@@ -405,9 +382,15 @@ Sollte jemand noch keine Plätze haben, gibt es aber in der Region (Werbellinsee
 
 </div>
 
+</div>
+
 </section>
 
-<section class="reveal">
+<div class="separator">
+<img src="leaves.png">
+</div>
+
+<section>
 
 <h2>Essen und Getränke</h2>
 
@@ -421,21 +404,26 @@ Um die Planung für das Buffet zu erleichtern, wäre es super, wenn ihr im unten
 
 </section>
 
+<div class="separator">
+<img src="leaves.png">
+</div>
+
 <!-- RSVP -->
 
-<section class="reveal">
+<section>
 
 <h2>Rückmeldung</h2>
 
 <div class="card">
 
-<p><strong>Bitte gebt uns bis zum 15.04 eine Rückmeldungin folgendem Formular.</strong></p>
+<p><strong>Bitte gebt uns bis zum 15.04 eine Rückmeldung</strong></p>
 
 <form>
 
 <input type="text" placeholder="Vor- und Nachname">
 
 <select>
+<option disabled selected>Tag der Anreise</option>
 <option>03.07.2026</option>
 <option>04.07.2026</option>
 </select>
@@ -456,9 +444,13 @@ Um die Planung für das Buffet zu erleichtern, wäre es super, wenn ihr im unten
 
 </section>
 
+<div class="separator">
+<img src="leaves.png">
+</div>
+
 <!-- SPOTIFY -->
 
-<section class="reveal">
+<section>
 
 <h2>Songwünsche</h2>
 
@@ -468,7 +460,7 @@ Um die Planung für das Buffet zu erleichtern, wäre es super, wenn ihr im unten
 
 <a href="https://open.spotify.com/playlist/6U6mrEpkEK5n6ZRZJRHPjs?si=3a7asa5TQVip1Yp5mLmPkQ&pi=NUPDuqEUSRiFh&nd=1&dlsi=e4c1243f02424ec4" target="_blank">
 
-<img src="leaves.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg">
 
 </a>
 
@@ -489,22 +481,6 @@ Damit alle auf ihre Kosten kommen, seid ihr herzlich eingeladen, schon vorab Son
 Wir freuen uns sehr darauf, diesen Tag mit euch zu feiern ❤️
 
 </footer>
-
-<script>
-
-const reveals=document.querySelectorAll(".reveal");
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("visible");
-}
-});
-},{threshold:0.2});
-
-reveals.forEach(el=>observer.observe(el));
-
-</script>
 
 </body>
 </html>
