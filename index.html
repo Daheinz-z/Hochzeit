@@ -1,119 +1,475 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hochzeit von Regina und David</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5dc;
-            color: #333;
-        }
-        header {
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(to right, #e6f2d4, #fff);
-        }
-        h1 {
-            font-size: 36px;
-            color: #4b8c2a;
-        }
-        h2 {
-            font-size: 24px;
-            color: #7d4d2a;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .schedule, .travel, .accommodation, .food, .rsvp {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #ffffff;
-        }
-        .rsvp-form input, .rsvp-form select, .rsvp-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Regina & David – Hochzeit</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+/* ---------- BASE ---------- */
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:#f8f6f2;
+color:#333;
+line-height:1.6;
+overflow-x:hidden;
+}
+
+section{
+padding:80px 22px;
+max-width:900px;
+margin:auto;
+position:relative;
+}
+
+h1,h2{
+font-family:'Playfair Display',serif;
+}
+
+h2{
+text-align:center;
+margin-bottom:40px;
+font-size:32px;
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+
+background:
+linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.85)),
+url("cafe-wildau.jpg");
+
+background-size:cover;
+background-position:center;
+
+}
+
+.hero h1{
+
+font-size:48px;
+letter-spacing:2px;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+}
+
+/* ---------- CARD ---------- */
+
+.card{
+
+background:white;
+padding:34px;
+border-radius:16px;
+box-shadow:0 20px 50px rgba(0,0,0,0.06);
+
+}
+
+/* ---------- LOCATION ---------- */
+
+.location{
+
+display:flex;
+flex-direction:column;
+gap:20px;
+margin-bottom:30px;
+
+}
+
+@media(min-width:700px){
+
+.location{
+flex-direction:row;
+}
+
+}
+
+.hex{
+
+width:220px;
+height:220px;
+clip-path:polygon(25% 5%,75% 5%,100% 50%,75% 95%,25% 95%,0% 50%);
+overflow:hidden;
+
+}
+
+.hex iframe{
+
+width:100%;
+height:100%;
+border:0;
+
+}
+
+/* ---------- FORM ---------- */
+
+form input,select{
+
+width:100%;
+padding:12px;
+margin-bottom:14px;
+border-radius:6px;
+border:1px solid #ddd;
+font-size:15px;
+
+}
+
+button{
+
+background:#5f7f63;
+border:none;
+padding:14px;
+width:100%;
+color:white;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+
+}
+
+/* ---------- SPOTIFY ---------- */
+
+.spotify{
+
+display:flex;
+align-items:center;
+gap:20px;
+
+}
+
+.spotify img{
+
+width:90px;
+
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+
+text-align:center;
+padding:60px;
+font-size:14px;
+color:#777;
+
+}
+
+/* ---------- SCROLL ANIMATION (APPLE STYLE) ---------- */
+
+.reveal{
+
+opacity:0;
+transform:translateY(40px);
+transition:all 1.2s cubic-bezier(.19,1,.22,1);
+
+}
+
+.reveal.visible{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+.delay1{transition-delay:0.2s}
+.delay2{transition-delay:0.4s}
+.delay3{transition-delay:0.6s}
+
+/* ---------- PARALLAX LEAVES ---------- */
+
+.leaf{
+
+position:absolute;
+width:140px;
+opacity:.5;
+pointer-events:none;
+transition:transform .2s linear;
+
+}
+
+.leaf.left{
+
+left:-40px;
+
+}
+
+.leaf.right{
+
+right:-40px;
+
+}
+
+</style>
+
 </head>
+
 <body>
-    <header>
-        <h1>Hochzeit von Regina und David</h1>
-        <h2>Datum: 4. Juli 2026</h2>
-        <h2>Ort: Café Wildau, Wildau 19, 16244 Schorfheide</h2>
-    </header>
-    <div class="container">
-        <div class="schedule">
-            <h3>Programm Freitag, 3. Juli</h3>
-            <p>Abendprogramm Details folgen.</p>
-            <h3>Samstag, 4. Juli</h3>
-            <ul>
-                <li>14:00 - Standesamt Joachimsthal</li>
-                <li>15:30 - Sektempfang</li>
-                <li>16:00/16:30 - Café & Kuchen</li>
-                <li>19:30 - Abendessen</li>
-                <li>21:30/22:00 - Party</li>
-            </ul>
-        </div>
-        <div class="travel">
-            <h3>Reiseinformationen</h3>
-            <p>Auto: 50 Minuten von Berlin mit Parkmöglichkeit.</p>
-            <p>Zug: RE3 nach Eberswalde mit Shuttle-Service.</p>
-        </div>
-        <div class="accommodation">
-            <h3>Unterkünfte</h3>
-            <p>Informationen über Café Wildau und Umgebung folgen.</p>
-        </div>
-        <div class="food">
-            <h3>Essen und Getränke</h3>
-            <p>Details zu Essensangeboten werden bereitgestellt.</p>
-        </div>
-        <div class="rsvp">
-            <h3>RSVP</h3>
-            <form class="rsvp-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="adults">Anzahl Erwachsener:</label>
-                <input type="number" id="adults" name="adults" min="0" required>
-                <label for="children_14_18">Kinder 14-18 Jahre:</label>
-                <input type="number" id="children_14_18" name="children_14_18" min="0">
-                <label for="children_6_13">Kinder 6-13 Jahre:</label>
-                <input type="number" id="children_6_13" name="children_6_13" min="0">
-                <label for="children_under_6">Kinder unter 6 Jahren:</label>
-                <input type="number" id="children_under_6" name="children_under_6" min="0">
-                <label for="food">Essen Anforderungen:</label>
-                <select id="food" name="food">
-                    <option value="normal">Normal</option>
-                    <option value="vegetarian">Vegetarisch</option>
-                    <option value="vegan">Vegan</option>
-                </select>
-                <textarea placeholder="Zusätzliche Anmerkungen..." rows="4"></textarea>
-                <button type="submit">Absenden</button>
-            </form>
-        </div>
-    </div>
-    <script>
-        // Local storage for RSVP data
-        document.querySelector('.rsvp-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const rsvpData = {};
-            formData.forEach((value, key) => {
-                rsvpData[key] = value;
-            });
-            localStorage.setItem('rsvpData', JSON.stringify(rsvpData));
-            alert('RSVP-Daten erfolgreich gespeichert!');
-        });
-    </script>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.6860448273324!2d13.524177315675251!3d52.78023197972268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b326e8318773e3%3A0x9b8d8f96e54d2f5c!2sCaf%C3%A9%20Wildau!5e0!3m2!1sde!2sde!4v1613152823479!5m2!1sde!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2611.0298354987995!2d13.575308915674149!3d52.95002657919136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b33de15362bd57%3A0x608e0e1547af04c3!2sStandesamt%20Joachimsthal!5e0!3m2!1sde!2sde!4v1613152872850!5m2!1sde!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="reveal">
+
+<h1>Regina & David</h1>
+
+<p><strong>04. Juli 2026</strong></p>
+
+<p>Werbellinsee</p>
+
+</div>
+
+</section>
+
+<!-- Tagesablauf -->
+
+<section class="reveal">
+
+<img class="leaf left parallax" data-speed="2" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
+
+<h2>Tagesablauf</h2>
+
+<div class="card reveal delay1">
+
+<p><strong>Freitag 03.07</strong></p>
+
+<p>
+
+Wenn ihr Lust habt, könnt ihr schon am Vortag anreisen  
+und mit uns einen entspannten Abend im Café Wildau verbringen.
+
+</p>
+
+<p><strong>Samstag 04.07</strong></p>
+
+<ul>
+
+<li>14:00 Trauung</li>
+<li>15:30 Sektempfang</li>
+<li>16:30 Kaffee & Kuchen</li>
+<li>19:30 Abendessen</li>
+<li>22:00 Party</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- Locations -->
+
+<section class="reveal">
+
+<img class="leaf right parallax" data-speed="3" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
+
+<h2>Locations</h2>
+
+<div class="card reveal delay1">
+
+<div class="location">
+
+<div class="hex">
+
+<iframe src="https://maps.google.com/maps?q=Standesamt%20Joachimsthal&t=&z=13&output=embed"></iframe>
+
+</div>
+
+<div>
+
+<strong>Standesamt Joachimsthal</strong>
+
+<p>
+
+16247 Joachimsthal
+
+</p>
+
+</div>
+
+</div>
+
+<div class="location">
+
+<div class="hex">
+
+<iframe src="https://maps.google.com/maps?q=Cafe%20Wildau%20Schorfheide&t=&z=13&output=embed"></iframe>
+
+</div>
+
+<div>
+
+<strong>Café Wildau</strong>
+
+<p>
+
+Wildau 19  
+16244 Schorfheide
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Unterkunft -->
+
+<section class="reveal">
+
+<img class="leaf left parallax" data-speed="4" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
+
+<h2>Unterkunft & Verpflegung</h2>
+
+<div class="card reveal delay1">
+
+<p>
+
+Viele Gäste haben bereits im Café Wildau oder in Ferienhäusern rund um den Werbellinsee gebucht.
+
+</p>
+
+<p>
+
+Das Café Wildau wird uns mit reichlich Essen und Getränken versorgen.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- RSVP -->
+
+<section class="reveal">
+
+<img class="leaf right parallax" data-speed="3" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
+
+<h2>Rückmeldung</h2>
+
+<div class="card reveal delay1">
+
+<form>
+
+<input type="text" placeholder="Vor- und Nachname">
+
+<select>
+
+<option>Anreisetag</option>
+<option>03.07</option>
+<option>04.07</option>
+
+</select>
+
+<input type="number" placeholder="Personen">
+
+<input type="number" placeholder="Vegetarisch">
+
+<input type="number" placeholder="Vegan">
+
+<button>Antwort senden</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- Spotify -->
+
+<section class="reveal">
+
+<img class="leaf left parallax" data-speed="3" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Watercolor_leaves.png">
+
+<h2>Songwünsche</h2>
+
+<div class="card reveal delay1">
+
+<div class="spotify">
+
+<a href="https://open.spotify.com/" target="_blank">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg">
+
+</a>
+
+<p>
+
+Fügt gerne eure Lieblingssongs zu unserer Party Playlist hinzu!
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+Wir freuen uns sehr darauf, diesen Tag mit euch zu feiern ❤️
+
+</footer>
+
+<script>
+
+/* ---------- SCROLL REVEAL ---------- */
+
+const reveals=document.querySelectorAll(".reveal");
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+}
+
+});
+
+},{threshold:0.2});
+
+reveals.forEach(el=>observer.observe(el));
+
+
+/* ---------- PARALLAX LEAVES ---------- */
+
+window.addEventListener("scroll",()=>{
+
+document.querySelectorAll(".parallax").forEach(el=>{
+
+const speed=el.dataset.speed;
+
+const y=window.scrollY/speed;
+
+el.style.transform="translateY("+y+"px)";
+
+});
+
+});
+
+</script>
+
 </body>
 </html>
