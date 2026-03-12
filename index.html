@@ -646,9 +646,29 @@ Wir freuen uns sehr darauf, diesen Tag mit euch zu feiern ❤️
 
     // Close the pop-up when the "Fertig" button is clicked
     document.getElementById("popup-close").addEventListener("click", function () {
+        // Hide the pop-up window
         document.getElementById("popup").style.display = "none";
+
+        // Clear the form fields
+        const form = document.querySelector("form");
+        form.reset();
+
+        // Show the success message below the "Antwort senden" button
+        const successMessage = document.createElement("p");
+        successMessage.textContent = "Daten erfolgreich gesendet";
+        successMessage.style.color = "green";
+        successMessage.style.marginTop = "10px";
+        successMessage.style.fontSize = "16px";
+
+        // Insert the success message below the form
+        const submitButton = form.querySelector("button");
+        if (!form.querySelector(".success-message")) { // Prevent duplicate messages
+            successMessage.classList.add("success-message");
+            submitButton.insertAdjacentElement("afterend", successMessage);
+        }
     });
 </script>
+
 
     
 </body>
