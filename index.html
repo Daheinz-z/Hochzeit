@@ -451,26 +451,21 @@ Um die Planung für das Buffet zu erleichtern, wäre es super, wenn ihr im unten
 
 <p><strong>Bitte gebt uns bis zum 15.04 eine Rückmeldung</strong></p>
 
-<form>
-
-<input type="text" placeholder="Vor- und Nachname">
-
-<select>
-<option disabled selected>Tag der Anreise</option>
-<option>03.07.2026</option>
-<option>04.07.2026</option>
-</select>
-
-<input type="text" placeholder="Anzahl der Personen">
-
-<input type="text" placeholder="Davon ohne besondere Essensvorlieben">
-
-<input type="text" placeholder="Davon vegetarisch">
-
-<input type="text" placeholder="Davon vegan">
-
-<button>Antwort senden</button>
-
+<form action="https://script.google.com/macros/s/AKfycbz5R20dYUEy2erydWnmcf8XLd38KEDDnFf2bBndvnLafjJu0YYcwD139IY6bffatzSS/exec" method="POST">
+    <input type="text" name="name" placeholder="Vor- und Nachname" required>
+    
+    <select name="arrival_date" required>
+        <option disabled selected>Tag der Anreise</option>
+        <option value="03.07.2026">03.07.2026</option>
+        <option value="04.07.2026">04.07.2026</option>
+    </select>
+    
+    <input type="number" name="number_of_guests" placeholder="Anzahl der Personen" required>
+    <input type="number" name="no_preferences" placeholder="Davon ohne besondere Essensvorlieben">
+    <input type="number" name="vegetarian" placeholder="Davon vegetarisch">
+    <input type="number" name="vegan" placeholder="Davon vegan">
+    
+    <button type="submit">Antwort senden</button>
 </form>
 
 </div>
