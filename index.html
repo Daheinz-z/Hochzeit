@@ -259,6 +259,58 @@ color:#777;
 
 }
 
+@media (max-width: 600px) {
+    h1 {
+        font-size: 48px; /* Reduce hero heading size on small screens */
+    }
+
+    h2 {
+        font-size: 24px; /* Reduce section heading size */
+    }
+
+    .hero .date, .hero .place {
+        font-size: 20px; /* Adjust hero subheading sizes */
+    }
+
+    body {
+        font-size: 14px; /* Adjust base font size */
+    }
+}
+
+    .separator img {
+    width: 380px; /* Default size */
+}
+
+@media (max-width: 600px) {
+    .separator img {
+        width: 200px; /* Smaller size for mobile */
+    }
+
+    .map {
+        width: 100%; /* Ensure maps take full width */
+        height: 200px; /* Adjust height for mobile */
+    }
+}
+
+    @media (max-width: 600px) {
+    .location, .split {
+        gap: 20px; /* Reduce gap for smaller screens */
+    }
+
+    .map {
+        width: 100%; /* Ensure maps take full width */
+        height: 200px; /* Adjust height for mobile */
+    }
+
+    .split img {
+        width: 100%; /* Ensure images take full width */
+    }
+
+    .card {
+        padding: 20px; /* Reduce padding inside cards */
+    }
+}
+    
 </style>
 </head>
 
@@ -452,7 +504,7 @@ Um die Planung für das Buffet zu erleichtern, wäre es super, wenn ihr im unten
 <p><strong>Bitte gebt uns bis zum 15.04 eine Rückmeldung</strong></p>
 
 <form action="https://script.google.com/macros/s/AKfycbxLOsvmWg5LHBwFLkbZEypk-tfJJeASp0neO75zWwsafJU3_xjuvJD-K4B2mzSoUL5j/exec" method="POST">
-    <input type="text" name="name" placeholder="Vor- und Nachname" required>
+    <input type="text" name="name" placeholder="Vor- und Nachname" required pattern="[A-Za-zäöüÄÖÜß\s]+" title="Bitte geben Sie nur Buchstaben ein.">
     
     <select name="arrival_date" required>
         <option disabled selected>Tag der Anreise</option>
@@ -460,10 +512,10 @@ Um die Planung für das Buffet zu erleichtern, wäre es super, wenn ihr im unten
         <option value="04.07.2026">04.07.2026</option>
     </select>
     
-    <input type="number" name="number_of_guests" placeholder="Anzahl der Personen" required>
-    <input type="number" name="no_preferences" placeholder="Davon ohne besondere Essensvorlieben">
-    <input type="number" name="vegetarian" placeholder="Davon vegetarisch">
-    <input type="number" name="vegan" placeholder="Davon vegan">
+    <input type="number" name="number_of_guests" placeholder="Anzahl der Personen" required min="1" inputmode="numeric">
+    <input type="number" name="no_preferences" placeholder="Davon ohne besondere Essensvorlieben" min="0" inputmode="numeric">
+    <input type="number" name="vegetarian" placeholder="Davon vegetarisch" min="0" inputmode="numeric">
+    <input type="number" name="vegan" placeholder="Davon vegan" min="0" inputmode="numeric">
     
     <button type="submit">Antwort senden</button>
 </form>
