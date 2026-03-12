@@ -310,6 +310,51 @@ color:#777;
         padding: 20px; /* Reduce padding inside cards */
     }
 }
+
+/* Pop-Up Window */
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 90%;
+}
+
+#popup-message {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+#popup-close {
+    background: #5f7f63;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#popup-close:hover {
+    background: #4e6b52;
+}
+
     
 </style>
 </head>
@@ -563,5 +608,48 @@ Wir freuen uns sehr darauf, diesen Tag mit euch zu feiern ❤️
 
 </footer>
 
+    <!-- Pop-Up Window -->
+<div id="popup" style="display: none;">
+    <div id="popup-content">
+        <p id="popup-message">Vielen Dank für Deine Rückmeldung :)</p>
+        <button id="popup-close">Fertig</button>
+    </div>
+</div>
+
+<script>
+    // Handle form submission
+    document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Get the form data
+        const form = e.target;
+        const formData = new FormData(form);
+
+        // Send the form data to the Google Apps Script endpoint
+        fetch(form.action, {
+            method: "POST",
+            body: formData,
+        })
+        .then(response => response.text())
+        .then(message => {
+            // Show the pop-up with the return message
+            document.getElementById("popup-message").textContent = message;
+            document.getElementById("popup").style.display = "flex";
+        })
+        .catch(error => {
+            // Show an error message in the pop-up
+            document.getElementById("popup-message").textContent = "Es gab einen Fehler beim Senden des Formulars. Bitte versuchen Sie es später erneut.";
+            document.getElementById("popup").style.display = "flex";
+            console.error("Error:", error);
+        });
+    });
+
+    // Close the pop-up when the "Fertig" button is clicked
+    document.getElementById("popup-close").addEventListener("click", function () {
+        document.getElementById("popup").style.display = "none";
+    });
+</script>
+
+    
 </body>
 </html>
