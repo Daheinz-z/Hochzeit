@@ -37,8 +37,12 @@ font-size:32px;
 margin-bottom:20px;
 }
 
+    .hidden-content {
+    visibility: hidden; /* Hide all content */
+}
 /* HERO */
 .hero {
+    visibility: visible; /* Ensure the hero section remains visible */
     height: 100vh; /* Full viewport height */
     background: 
         linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.9)),
@@ -399,12 +403,12 @@ color:#777;
     }
 
     document.addEventListener("DOMContentLoaded", async function () {
-        const correctHash = "b751955aa3a8456b3714adaa8c58ea089cb8df55e532af56216193cc4d05c470"; // SHA-256 hash of "original password"
+        const correctHash = "b751955aa3a8456b3714adaa8c58ea089cb8df55e532af56216193cc4d05c470"; // Replace with the correct SHA-256 hash of "reginaunddavid2026"
         const userPassword = prompt("Bitte geben Sie das Passwort ein:");
 
         const userHash = await hashPassword(userPassword);
         if (userHash === correctHash) {
-            document.querySelector(".hidden-content").style.display = "block";
+            document.querySelector(".hidden-content").style.visibility = "visible"; // Reveal the content
         } else {
             alert("Falsches Passwort. Sie werden weitergeleitet.");
             window.location.href = "https://www.google.com";
@@ -416,27 +420,22 @@ color:#777;
 
 <body>
     
-<!-- Hidden Content -->
-    <div class="hidden-content">
-    
 <!-- HERO -->
 
 <section class="hero">
 
 <div class="hero-inner">
 
-<h1>Regina & David</h1>
-
-<div class="date">04. Juli 2026</div>
-
-<div class="place">Werbellinsee</div>
+<h1 style="visibility: hidden;">Regina & David</h1> <!-- Hide the title -->
+            <div class="date" style="visibility: hidden;">04. Juli 2026</div> <!-- Hide the date -->
+            <div class="place" style="visibility: hidden;">Werbellinsee</div> <!-- Hide the place -->
 
 <p>
 
-<strong>Ihr Lieben,</strong><br><br>
+<div style="visibility:hidden;" <strong>Ihr Lieben,</strong><br><br>
 
 am 04. Juli 2026 laden wir euch ganz herzlich ein,<br>
-mit uns gemeinsam unsere Hochzeit zu feiern!
+mit uns gemeinsam unsere Hochzeit zu feiern!</div>
 
 </p>
 
@@ -444,6 +443,9 @@ mit uns gemeinsam unsere Hochzeit zu feiern!
 
 </section>
 
+    <!-- Hidden Content -->
+    <div class="hidden-content">
+        
 <div class="separator">
 <img src="leaves.png">
 </div>
@@ -729,3 +731,6 @@ Wir freuen uns sehr darauf, diesen Tag mit euch zu feiern ❤️
     </div>
 </body>
 </html>
+
+
+
