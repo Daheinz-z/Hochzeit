@@ -387,12 +387,40 @@ color:#777;
     background: #4e6b52;
 }
 
+ <!-- Password Protection Script -->
+    <script>
+    async function hashPassword(password) {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(password);
+        const hash = await crypto.subtle.digest('SHA-256', data);
+        return Array.from(new Uint8Array(hash))
+            .map(b => b.toString(16).padStart(2, '0'))
+            .join('');
+    }
+
+    document.addEventListener("DOMContentLoaded", async function () {
+        const correctHash = "5e884898da28047151d0e56f8dc6292773603d0d6aabbddc8f8c9c8f9c9c9c9c"; // SHA-256 hash of "original password"
+        const userPassword = prompt("Bitte geben Sie das Passwort ein:");
+
+        const userHash = await hashPassword(userPassword);
+        if (userHash === correctHash) {
+            document.querySelector(".hidden-content").style.display = "block";
+        } else {
+            alert("Falsches Passwort. Sie werden weitergeleitet.");
+            window.location.href = "https://www.google.com";
+        }
+    });
+</script>
+
     
 </style>
 </head>
 
 <body>
-
+    
+<!-- Hidden Content -->
+    <div class="hidden-content">
+    
 <!-- HERO -->
 
 <section class="hero">
@@ -704,6 +732,6 @@ Wir freuen uns sehr darauf, diesen Tag mit euch zu feiern ❤️
 </script>
 
 
-    
+    </div>
 </body>
 </html>
