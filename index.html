@@ -37,8 +37,8 @@ font-size:32px;
 margin-bottom:20px;
 }
 
-    .hidden-content {
-    visibility: hidden; /* Hide all content */
+.hidden-content {
+    visibility: hidden; /* Hide all content except the hero section */
 }
 /* HERO */
 .hero {
@@ -65,16 +65,19 @@ margin-bottom:20px;
 .hero h1{
 font-size:72px;
 margin-bottom:10px;
+    visibility: hidden; /* Hide hero text by default */
 }
 
 .hero .date{
 font-size:30px;
 font-weight:600;
+    visibility: hidden; /* Hide hero text by default */
 }
 
 .hero .place{
 font-size:26px;
 margin-bottom:40px;
+    visibility: hidden; /* Hide hero text by default */
 }
 
 /* LEAF SEPARATOR */
@@ -408,7 +411,14 @@ color:#777;
 
         const userHash = await hashPassword(userPassword);
         if (userHash === correctHash) {
-            document.querySelector(".hidden-content").style.visibility = "visible"; // Reveal the content
+            // Reveal hero text
+        document.querySelector(".hero h1").style.visibility = "visible";
+        document.querySelector(".hero .date").style.visibility = "visible";
+        document.querySelector(".hero .place").style.visibility = "visible";
+        document.querySelector(".hero p").style.visibility = "visible";
+
+        // Reveal the rest of the page
+        document.querySelector(".hidden-content").style.visibility = "visible";
         } else {
             alert("Falsches Passwort. Sie werden weitergeleitet.");
             window.location.href = "https://www.google.com";
@@ -430,14 +440,11 @@ color:#777;
             <div class="date" style="visibility: hidden;">04. Juli 2026</div> <!-- Hide the date -->
             <div class="place" style="visibility: hidden;">Werbellinsee</div> <!-- Hide the place -->
 
-<p>
-
-<div style="visibility:hidden;" <strong>Ihr Lieben,</strong><br><br>
-
-am 04. Juli 2026 laden wir euch ganz herzlich ein,<br>
-mit uns gemeinsam unsere Hochzeit zu feiern!</div>
-
-</p>
+<p style="visibility: hidden;">
+                <strong>Ihr Lieben,</strong><br><br>
+                am 04. Juli 2026 laden wir euch ganz herzlich ein,<br>
+                mit uns gemeinsam unsere Hochzeit zu feiern!
+            </p>
 
 </div>
 
