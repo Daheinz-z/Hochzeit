@@ -254,14 +254,19 @@ border-radius:8px;
 border:1px solid #ddd;
 
 font-size:15px;
+color: #aaa; /* Set default text color to grey */
 box-sizing:border-box;
 background: white; /* Set background color to match other fields */
 appearance: none; /* Remove default browser styling for dropdown */
 
 }
-    form select {
-    background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
-    background-size: 16px;
+form select {
+background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+background-size: 16px;
+}
+
+form select option {
+color: #333; /* Set color for selectable options */
 }
     
 form select option:disabled {
@@ -622,7 +627,7 @@ Um die Planung für das Buffet zu erleichtern, wäre es super, wenn ihr im unten
 
 <div class="card">
 
-<p><strong>Bitte gebt uns bis zum 30.04 eine Rückmeldung</strong></p>
+<p><strong>Über eure Rückmeldung bis zum 30. April 2026 würden wir uns sehr freuen</strong></p>
 
 <form action="https://script.google.com/macros/s/AKfycbxLOsvmWg5LHBwFLkbZEypk-tfJJeASp0neO75zWwsafJU3_xjuvJD-K4B2mzSoUL5j/exec" method="POST">
     <input type="text" name="name" placeholder="Vor- und Nachname" required pattern="[A-Za-zäöüÄÖÜß\s]+" title="Bitte geben Sie nur Buchstaben ein.">
